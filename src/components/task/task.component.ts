@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'task',
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
 })
