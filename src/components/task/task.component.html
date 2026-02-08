@@ -1,13 +1,13 @@
-<div class="task__media">
-  <img class="task__media-image" [ngSrc]="media()!" [alt]="mediaAlt()" height="144" width="128">
+<div class="task-media">
+  <img class="task-media__image" [ngSrc]="media()!" [alt]="mediaAlt()" height="144" width="128">
 </div>
-<div class="task__content">
-  <h2 class="task__head">{{head()}}</h2>
-  <p class="task__body">
+<div class="task-content">
+  <h2 class="task-head">{{head()}}</h2>
+  <p class="task-body">
     <ng-content></ng-content>
   </p>
-  <p class="task__foot">
+  <p class="task-foot">
     {{callToAction()}}
-    <img ngSrc="/icons/chevron-right-solid-full.svg" alt="chevron right" height="16" width="16"/>
+    <img class="task-foot__icon" ngSrc="/icons/chevron-right-solid-full.svg" alt="chevron right" height="18" width="18"/>
   </p>
 </div>
