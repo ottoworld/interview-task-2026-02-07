@@ -1,2 +1,13 @@
-<p>task works!</p>
-<img ngSrc="/icons/chevron-right-solid-full.svg" alt="chevron right" [fill]="true"/>
+<div class="task__media">
+  <ng-content select="[slot=media]"></ng-content>
+</div>
+<div class="task__content">
+  <h2 class="task__head">{{head()}}</h2>
+  <div class="task__body">
+    <ng-content></ng-content>
+  </div>
+  <p class="task__foot">
+    {{callToAction()}}
+    <img ngSrc="/icons/chevron-right-solid-full.svg" alt="chevron right" height="16" width="16"/>
+  </p>
+</div>

@@ -98,6 +98,7 @@
               "-d",
               "."
             ],
+            "styles": ["src/styles.css"],
             "outputDir": "storybook-static"
           }
         }

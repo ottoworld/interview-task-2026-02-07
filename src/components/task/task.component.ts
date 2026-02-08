@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, contentChild, input} from '@angular/core';
 import { NgOptimizedImage } from "@angular/common";
 
 @Component({
-  selector: 'task',
+  selector: '[task]',
   imports: [
     NgOptimizedImage
   ],
@@ -10,5 +10,7 @@ import { NgOptimizedImage } from "@angular/common";
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-
+  head = input<string>();
+  callToAction = input<string>();
+  media = contentChild('media');
 }

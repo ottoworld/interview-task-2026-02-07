@@ -1,0 +1,50 @@
+:host {
+  --size-xs: 8px;
+  --size-sm: 14px;
+  --size-md: 20px;
+  --size-lg: 28px;
+  --size-xl: 36px;
+  --background: #ffffff;
+  /*--background-secondary: #e5e5e5;*/
+  --foreground: #696765;
+  --interactive: #455560;
+  /*--brand: #ce7e5a;*/
+  --font-color-default: var(--foreground);
+  --font-color-heading: #212121;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-family: 'Roboto', sans-serif;
+  --border-radius: 12px;
+
+  /*padding: 0;*/
+  /*cursor: pointer;*/
+  /*outline: inherit;*/
+  text-decoration: none;
+
+  border: none;
+  padding-inline: var(--size-xl);
+  padding-block: var(--size-lg);
+  background: var(--background);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  display: flex;
+  gap: var(--size-md);
+
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--font-color-default);
+}
+
+.task__head {
+  font-size: var(--size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--font-color-heading);
+}
+
+.task__foot {
+  color: var(--interactive);
+  font-weight: var(--font-weight-bold);
+}
+

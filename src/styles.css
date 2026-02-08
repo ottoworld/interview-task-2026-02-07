@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --background: #ffffff;
+  --background-secondary: #e5e5e5;
+  --foreground: #171717;
+  --interactive: #ce7e5a;
+  --brand: #ce7e5a;
+  --font-color-default: #696765;
+  --font-color-heading: #212121;
+  --font-family: 'Roboto', sans-serif;
+  --size-xs: 8px;
+  --size-sm: 14px;
+  --size-md: 20px;
+  --size-lg: 28px;
+  --size-xl: 36px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101010;
+    --background-secondary: #3b3b3b;
+    --foreground: #ededed;
+    --interactive: #a64d19;
+    --brand: #a64d19;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

@@ -67,14 +67,14 @@
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-f3dc4943b2fe15a1fc03f65f416f8144370514b9a1210dda7c4d40ea18953cdc0f9cd6efcad447bd7896d9465bc0e23e7b3f502b0a99c836196759c9bc050505",
+            "id": "component-TaskComponent-665ef4b069bf768a2049920e13305664e0d94d5d798f49f8fdf8ca65c8ff8a7c49dfc4ca1fd373e52b7cbcc98aea51f066c21c1af53e97bf51afb085394f11b1",
             "file": "src/components/task/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "task",
+            "selector": "[task]",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -82,9 +82,44 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "callToAction",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": false
+                },
+                {
+                    "name": "head",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": false
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "media",
+                    "defaultValue": "contentChild('media')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -99,13 +134,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { NgOptimizedImage } from \"@angular/common\";\r\n\r\n@Component({\r\n  selector: 'task',\r\n  imports: [\r\n    NgOptimizedImage\r\n  ],\r\n  templateUrl: './task.component.html',\r\n  styleUrl: './task.component.css',\r\n})\r\nexport class TaskComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, contentChild, HostBinding, input} from '@angular/core';\r\nimport { NgOptimizedImage } from \"@angular/common\";\r\n\r\n@Component({\r\n  selector: '[task]',\r\n  imports: [\r\n    NgOptimizedImage\r\n  ],\r\n  templateUrl: './task.component.html',\r\n  styleUrl: './task.component.css',\r\n})\r\nexport class TaskComponent {\r\n  head = input<string>();\r\n  callToAction = input<string>();\r\n  media = contentChild('media');\r\n}\r\n",
             "styleUrl": "./task.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>task works!</p>\r\n<img ngSrc=\"assets/chevron-right-solid-full.svg\" alt=\"chevron right\" [fill]=\"true\"/>\r\n"
+            "templateData": "<div class=\"task__media\">\r\n  <ng-content select=\"[slot=media]\"></ng-content>\r\n</div>\r\n<div class=\"task__content\">\r\n  <h2 class=\"task__head\">{{head()}}</h2>\r\n  <div class=\"task__body\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n  <p class=\"task__foot\">\r\n    {{callToAction()}}\r\n    <img ngSrc=\"/icons/chevron-right-solid-full.svg\" alt=\"chevron right\" [fill]=\"true\"/>\r\n  </p>\r\n</div>\r\n"
         }
     ],
     "modules": [],
@@ -209,7 +244,7 @@
                 "linktype": "component",
                 "name": "TaskComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             }
         ]
