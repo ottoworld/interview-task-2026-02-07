@@ -30,7 +30,34 @@ export class App {
       media: "/Upload Data.png",
       mediaAlt: "Upload data icon with pink background",
       onClick: this.onClick
-    }
+    },
+    {
+      id: "upload",
+      body: "Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.",
+      head: "Upload data",
+      callToAction: "Visit app",
+      media: "/Upload Data.png",
+      mediaAlt: "Upload data icon with pink background",
+      onClick: this.onClick
+    },
+    {
+      id: "upload",
+      body: "Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.",
+      head: "Upload data",
+      callToAction: "Visit app",
+      media: "/Upload Data.png",
+      mediaAlt: "Upload data icon with pink background",
+      onClick: this.onClick
+    },
+    {
+      id: "upload",
+      body: "Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.",
+      head: "Upload data",
+      callToAction: "Visit app",
+      media: "/Upload Data.png",
+      mediaAlt: "Upload data icon with pink background",
+      onClick: this.onClick
+    },
   ]
   protected readonly title = signal('interview-task-2026-02-07');
 }

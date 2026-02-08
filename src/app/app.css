@@ -1,0 +1,22 @@
+.page-head {
+  background: linear-gradient(274.91deg, #70bc1f -26.96%, #00ace1 93.71%);
+  height: 25vh;
+  display: flex;
+}
+
+.page-head-container {
+  margin-block: auto;
+}
+
+.page-head__title {
+  color: var(--background);
+}
+
+.page-head__description {
+  color: var(--background);
+  font-size: var(--size-md);
+}
+
+.page-body {
+  background: var(--background-secondary);
+}

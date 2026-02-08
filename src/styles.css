@@ -27,6 +27,7 @@
   font-size: var(--size-sm);
   line-height: var(--size-md);
   color: var(--font-color-default);
+  background-color: var(--background-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
