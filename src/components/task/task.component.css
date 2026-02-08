@@ -1,30 +1,6 @@
 :host {
-  --size-xs: 8px;
-  --size-sm: 14px;
-  --size-md: 20px;
-  --size-lg: 28px;
-  --size-xl: 36px;
-  --background: #ffffff;
-  --background-secondary: #f3f3f3;
-  --foreground: #696765;
-  --interactive: #455560;
-  --font-color-default: var(--foreground);
-  --font-color-heading: #212121;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --border-radius: 12px;
-
-  font-family: "Roboto", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-  font-size: var(--size-sm);
-  line-height: var(--size-md);
-  color: var(--font-color-default);
-
+  --task-icon-light-display: inline;
+  --task-icon-dark-display: none;
   cursor: pointer;
   text-decoration: none;
   border: none;
@@ -77,6 +53,19 @@
   font-weight: var(--font-weight-bold);
 }
 
-.task-foot__icon {
+.task-foot__icon--light {
+  display: var(--task-icon-light-display);
   vertical-align: middle;
+}
+
+.task-foot__icon--dark {
+  display: var(--task-icon-dark-display);
+  vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --task-icon-light-display: none;
+    --task-icon-dark-display: inline;
+  }
 }
