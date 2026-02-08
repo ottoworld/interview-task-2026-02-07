@@ -32,14 +32,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #202020;
-    --background-secondary: #3b3b3b;
+    --background: #3b3b3b;
+    --background-secondary: #272727;
     --foreground: #ededed;
-    --interactive: #86a8bf;
+    --interactive: #a5d2f0;
     --font-color-heading: #ffffff;
-    --shadow-light: rgba(255, 255, 255, 0.1);
-    --shadow-medium: rgba(255, 255, 255, 0.5);
-    --shadow-heavy: rgba(255, 255, 255, 1);
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.75);
+    --shadow-heavy: rgba(0, 0, 0, 1);
   }
 }
 

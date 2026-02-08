@@ -26,23 +26,26 @@
   top: -5vh;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--size-lg);
+  gap: var(--size-md)
 }
 
 @media (min-width: 768px) {
   .page-body__group {
     grid-template-columns: 1fr;
+    gap: var(--size-md)
   }
 }
 
 @media (min-width: 1024px) {
   .page-body__group {
     grid-template-columns: 1fr 1fr;
+    gap: var(--size-md) var(--size-xl);
   }
 }
 
 @media (min-width: 1440px) {
   .page-body__group {
     grid-template-columns: 1fr 1fr;
+    gap: var(--size-md) var(--size-xl);
   }
 }
