@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "App",
-            "id": "component-App-a2bdc1c9af2ef102894d2478ecf5590fd43c0ddaa8f74efeda91260dba11788be55c3108f62df3333523959fc295b68a93d5ce0eef10f74ed40f8d285839f70a",
+            "id": "component-App-c142ad9484f397b56eabe65a153c13bc916123981d390f0e873e3e983e4ce0127eb69ca9a11bf6ef1de7930773b82da45eaa1d431d9ea4a9e4bb95e56baf03d6",
             "file": "src/app/app.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -36,18 +36,18 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 22
                 },
                 {
                     "name": "tasks",
-                    "defaultValue": "[\r\n    {\r\n      id: \"upload\",\r\n      body: \"Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.\",\r\n      head: \"Upload data\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Upload Data.png\",\r\n      mediaAlt: \"Upload data icon with pink background\",\r\n      onClick: this.onClick\r\n    }\r\n  ]",
+                    "defaultValue": "[\r\n    {\r\n      id: \"upload\",\r\n      body: \"Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.\",\r\n      head: \"Upload data\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Upload Data.png\",\r\n      mediaAlt: \"Upload data icon with pink background\",\r\n      onClick: this.onClick\r\n    },\r\n    {\r\n      id: \"see\",\r\n      body: \"Access all your advice and documents from Hymans Roberson via our secure online storage facility.\",\r\n      head: \"See my documents\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/See my documents.png\",\r\n      mediaAlt: \"Documents icon with yellow background\",\r\n      onClick: this.onClick\r\n    },\r\n    {\r\n      id: \"whole\",\r\n      body: \"Monitor and view latest whole fund funding position.\",\r\n      head: \"Whole fund funding update\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Whole fund update.png\",\r\n      mediaAlt: \"Graph icon with blue background\",\r\n      onClick: this.onClick\r\n    },\r\n    {\r\n      id: \"employer\",\r\n      body: \"Calculate an updated funding level or indicative cessation valuation for any employer. View and download reports to share with your employers\",\r\n      head: \"Employer funding update\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Employer funding update.png\",\r\n      mediaAlt: \"Employer connections icon with green background\",\r\n      onClick: this.onClick\r\n    },\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "TaskData[]",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 24
                 },
                 {
                     "name": "title",
@@ -58,7 +58,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 36,
+                    "line": 62,
                     "modifierKind": [
                         124,
                         148
@@ -75,25 +75,22 @@
                 {
                     "name": "TaskComponent",
                     "type": "component"
-                },
-                {
-                    "name": "NgOptimizedImage"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, signal } from '@angular/core';\r\nimport {TaskComponent} from \"../components/task/task.component\";\r\nimport {NgOptimizedImage} from \"@angular/common\";\r\n\r\nexport type TaskData = {\r\n  id: string;\r\n  media: string;\r\n  mediaAlt: string;\r\n  head: string;\r\n  body: string;\r\n  callToAction: string;\r\n  href?: string;\r\n  onClick?: () => void;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [TaskComponent, NgOptimizedImage],\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.css'\r\n})\r\nexport class App {\r\n  onClick = () => { console.log('click'); };\r\n\r\n  tasks: TaskData[] = [\r\n    {\r\n      id: \"upload\",\r\n      body: \"Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.\",\r\n      head: \"Upload data\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Upload Data.png\",\r\n      mediaAlt: \"Upload data icon with pink background\",\r\n      onClick: this.onClick\r\n    }\r\n  ]\r\n  protected readonly title = signal('interview-task-2026-02-07');\r\n}\r\n",
+            "sourceCode": "import { Component, signal } from '@angular/core';\r\nimport {TaskComponent} from \"../components/task/task.component\";\r\n\r\nexport type TaskData = {\r\n  id: string;\r\n  media: string;\r\n  mediaAlt: string;\r\n  head: string;\r\n  body: string;\r\n  callToAction: string;\r\n  href?: string;\r\n  onClick?: () => void;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [TaskComponent],\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.css'\r\n})\r\nexport class App {\r\n  onClick = () => { console.log('click'); };\r\n\r\n  tasks: TaskData[] = [\r\n    {\r\n      id: \"upload\",\r\n      body: \"Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.\",\r\n      head: \"Upload data\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Upload Data.png\",\r\n      mediaAlt: \"Upload data icon with pink background\",\r\n      onClick: this.onClick\r\n    },\r\n    {\r\n      id: \"see\",\r\n      body: \"Access all your advice and documents from Hymans Roberson via our secure online storage facility.\",\r\n      head: \"See my documents\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/See my documents.png\",\r\n      mediaAlt: \"Documents icon with yellow background\",\r\n      onClick: this.onClick\r\n    },\r\n    {\r\n      id: \"whole\",\r\n      body: \"Monitor and view latest whole fund funding position.\",\r\n      head: \"Whole fund funding update\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Whole fund update.png\",\r\n      mediaAlt: \"Graph icon with blue background\",\r\n      onClick: this.onClick\r\n    },\r\n    {\r\n      id: \"employer\",\r\n      body: \"Calculate an updated funding level or indicative cessation valuation for any employer. View and download reports to share with your employers\",\r\n      head: \"Employer funding update\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Employer funding update.png\",\r\n      mediaAlt: \"Employer connections icon with green background\",\r\n      onClick: this.onClick\r\n    },\r\n  ]\r\n  protected readonly title = signal('interview-task-2026-02-07');\r\n}\r\n",
             "styleUrl": "./app.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@for (task of tasks; track task.id) {\r\n  @if (task.href) {\r\n    <a task>{{task.body}}</a>\r\n  } @else {\r\n    <button task [callToAction]=\"task.callToAction\" [head]=\"task.head\">\r\n      {{task.body}}\r\n      <img slot=\"media\" [ngSrc]=\"task.media\" [alt]=\"task.mediaAlt\" height=\"144\" width=\"128\">\r\n    </button>\r\n  }\r\n}\r\n"
+            "templateData": "<div>\r\n  <div class=\"page-head\">\r\n    <div class=\"page-head-container container\">\r\n    <h1 class=\"page-head__title\">Welcome</h1>\r\n    <p class=\"page-head__description\">What would you like to do?</p>\r\n    </div>\r\n  </div>\r\n  <div class=\"page-body\">\r\n    <div class=\"container\">\r\n      <div class=\"page-body__group\">\r\n        @for (task of tasks; track task.id) {\r\n          @if (task.href) {\r\n            <a\r\n              task\r\n              [href]=\"task.href\"\r\n              [callToAction]=\"task.callToAction\"\r\n              [head]=\"task.head\"\r\n              [media]=\"task.media\"\r\n              [mediaAlt]=\"task.mediaAlt\"\r\n            >\r\n              {{task.body}}\r\n            </a>\r\n          } @else {\r\n            <button\r\n              task\r\n              [callToAction]=\"task.callToAction\"\r\n              [head]=\"task.head\"\r\n              [media]=\"task.media\"\r\n              [mediaAlt]=\"task.mediaAlt\"\r\n            >\r\n              {{task.body}}\r\n            </button>\r\n          }\r\n        }\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-e567e48547a828cc2c22126a6a4d670010261f229b3c95392abcaf9de3cf60e3c1c026530fa1fc5ee73732c3ef24a19c7170eb26f524f82aa3f7edd66ead4624",
+            "id": "component-TaskComponent-5e81b9eb38dbf559f98ffc2654f8d114b00ff3f5e3d8fbc9fb8bd52f64c5f657f2412dddd04d72be09e5f0e72d6707a6ef1da1f71e9087409b8413993177f20c",
             "file": "src/components/task/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -111,13 +108,15 @@
             "inputsClass": [
                 {
                     "name": "callToAction",
+                    "defaultValue": "\"Visit app\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "indexKey": "",
                     "optional": false,
-                    "description": "",
-                    "line": 14,
+                    "description": "<p>Optional text to override the &quot;Visit app&quot; call to action</p>\n",
+                    "line": 21,
+                    "rawdescription": "\n\nOptional text to override the \"Visit app\" call to action\n",
                     "required": false
                 },
                 {
@@ -127,25 +126,38 @@
                     "type": "string",
                     "indexKey": "",
                     "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "required": false
+                    "description": "<p>Text to be displayed in the head slot</p>\n",
+                    "line": 16,
+                    "rawdescription": "\n\nText to be displayed in the head slot\n",
+                    "required": true
+                },
+                {
+                    "name": "media",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Media source e.g. <code>&quot;/my-picture.png&quot;</code></p>\n",
+                    "line": 26,
+                    "rawdescription": "\n\nMedia source e.g. `\"/my-picture.png\"`\n",
+                    "required": true
+                },
+                {
+                    "name": "mediaAlt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Screen reader text for <code>media</code></p>\n",
+                    "line": 31,
+                    "rawdescription": "\n\nScreen reader text for `media`\n",
+                    "required": true
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "media",
-                    "defaultValue": "contentChild('media')",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 15
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -160,13 +172,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, contentChild, input} from '@angular/core';\r\nimport { NgOptimizedImage } from \"@angular/common\";\r\n\r\n@Component({\r\n  selector: '[task]',\r\n  imports: [\r\n    NgOptimizedImage\r\n  ],\r\n  templateUrl: './task.component.html',\r\n  styleUrl: './task.component.css',\r\n})\r\nexport class TaskComponent {\r\n  head = input<string>();\r\n  callToAction = input<string>();\r\n  media = contentChild('media');\r\n}\r\n",
+            "sourceCode": "import {Component, input} from '@angular/core';\r\nimport { NgOptimizedImage } from \"@angular/common\";\r\n\r\n@Component({\r\n  selector: '[task]',\r\n  imports: [\r\n    NgOptimizedImage\r\n  ],\r\n  templateUrl: './task.component.html',\r\n  styleUrl: './task.component.css',\r\n})\r\nexport class TaskComponent {\r\n  /**\r\n   * Text to be displayed in the head slot\r\n   */\r\n  head = input.required<string>();\r\n\r\n  /**\r\n   * Optional text to override the \"Visit app\" call to action\r\n   */\r\n  callToAction = input<string>(\"Visit app\");\r\n\r\n  /**\r\n   * Media source e.g. `\"/my-picture.png\"`\r\n   */\r\n  media = input.required<string>();\r\n\r\n  /**\r\n   * Screen reader text for `media`\r\n   */\r\n  mediaAlt = input.required<string>();\r\n}\r\n",
             "styleUrl": "./task.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"task__media\">\r\n  <ng-content select=\"[slot=media]\"></ng-content>\r\n</div>\r\n<div class=\"task__content\">\r\n  <h2 class=\"task__head\">{{head()}}</h2>\r\n  <div class=\"task__body\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n  <p class=\"task__foot\">\r\n    {{callToAction()}}\r\n    <img ngSrc=\"/icons/chevron-right-solid-full.svg\" alt=\"chevron right\" height=\"16\" width=\"16\"/>\r\n  </p>\r\n</div>\r\n"
+            "templateData": "<div class=\"task-media\">\r\n  <img class=\"task-media__image\" [ngSrc]=\"media()!\" [alt]=\"mediaAlt()\" height=\"144\" width=\"128\" priority>\r\n</div>\r\n<div class=\"task-content\">\r\n  <h2 class=\"task-head\">{{head()}}</h2>\r\n  <p class=\"task-body\">\r\n    <ng-content></ng-content>\r\n  </p>\r\n  <p class=\"task-foot\">\r\n    {{callToAction()}}\r\n    <img class=\"task-foot__icon--light\" ngSrc=\"/icons/chevron-right-light.svg\" alt=\"chevron right\" height=\"18\" width=\"18\"/>\r\n    <img class=\"task-foot__icon--dark\" ngSrc=\"/icons/chevron-right-dark.svg\" alt=\"chevron right\" height=\"18\" width=\"18\"/>\r\n  </p>\r\n</div>\r\n"
         }
     ],
     "modules": [],
@@ -258,7 +270,7 @@
         "children": []
     },
     "coverage": {
-        "count": 0,
+        "count": 16,
         "status": "low",
         "files": [
             {
@@ -305,9 +317,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TaskComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
+                "coveragePercent": 80,
+                "coverageCount": "4/5",
+                "status": "very-good"
             }
         ]
     }
