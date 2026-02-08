@@ -7,8 +7,8 @@
   text-decoration: none;
   border: none;
 
-  padding-inline: var(--size-xl);
-  padding-block: var(--size-lg);
+  padding-inline: var(--size-sm);
+  padding-block: var(--size-sm);
   background: var(--background);
   box-shadow: var(--task-box-shadow);
   border-radius: var(--border-radius);
@@ -37,16 +37,15 @@
 }
 
 .task-head {
-  margin-top: 0;
   font-size: var(--size-md);
   line-height: var(--size-lg);
   font-weight: var(--font-weight-medium);
   color: var(--font-color-heading);
+  margin-bottom: var(--size-md);
 }
 
 .task-body {
   flex-grow: 1;
-  margin: 0;
   color: var(--font-color-default);
 }
 
@@ -70,5 +69,12 @@
   :host {
     --task-icon-light-display: none;
     --task-icon-dark-display: inline;
+  }
+}
+
+@media (min-width: 768px) {
+  :host {
+    padding-inline: var(--size-xl);
+    padding-block: var(--size-lg);
   }
 }
