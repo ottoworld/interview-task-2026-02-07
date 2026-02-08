@@ -1,11 +1,11 @@
 <div class="task__media">
-  <ng-content select="[slot=media]"></ng-content>
+  <img class="task__media-image" [ngSrc]="media()!" [alt]="mediaAlt()" height="144" width="128">
 </div>
 <div class="task__content">
   <h2 class="task__head">{{head()}}</h2>
-  <div class="task__body">
+  <p class="task__body">
     <ng-content></ng-content>
-  </div>
+  </p>
   <p class="task__foot">
     {{callToAction()}}
     <img ngSrc="/icons/chevron-right-solid-full.svg" alt="chevron right" height="16" width="16"/>

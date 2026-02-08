@@ -1,2 +1,24 @@
-<p>Hello world</p>
-<router-outlet />
+@for (task of tasks; track task.id) {
+  @if (task.href) {
+    <a
+      task
+      [href]="task.href"
+      [callToAction]="task.callToAction"
+      [head]="task.head"
+      [media]="task.media"
+      [mediaAlt]="task.mediaAlt"
+    >
+      {{task.body}}
+    </a>
+  } @else {
+    <button
+      task
+      [callToAction]="task.callToAction"
+      [head]="task.head"
+      [media]="task.media"
+      [mediaAlt]="task.mediaAlt"
+    >
+      {{task.body}}
+    </button>
+  }
+}
