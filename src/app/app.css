@@ -9,14 +9,40 @@
 }
 
 .page-head__title {
-  color: var(--background);
+  color: white;
 }
 
 .page-head__description {
-  color: var(--background);
+  color: white;
   font-size: var(--size-md);
 }
 
 .page-body {
   background: var(--background-secondary);
+}
+
+.page-body__group {
+  position: relative;
+  top: -5vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--size-lg);
+}
+
+@media (min-width: 768px) {
+  .page-body__group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-body__group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-body__group {
+    grid-template-columns: 1fr 1fr;
+  }
 }
