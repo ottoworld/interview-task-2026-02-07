@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "App",
-            "id": "component-App-e28d36133ec08e3b6e33fb4a87f51a699de2587547e916f6df466f85897eb1c6d8653c741b35c7641cc559dd5f7fc2b67eb841733903b5e36d4ae0eca8b00ec9",
+            "id": "component-App-a2bdc1c9af2ef102894d2478ecf5590fd43c0ddaa8f74efeda91260dba11788be55c3108f62df3333523959fc295b68a93d5ce0eef10f74ed40f8d285839f70a",
             "file": "src/app/app.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -28,6 +28,28 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "onClick",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "tasks",
+                    "defaultValue": "[\r\n    {\r\n      id: \"upload\",\r\n      body: \"Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.\",\r\n      head: \"Upload data\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Upload Data.png\",\r\n      mediaAlt: \"Upload data icon with pink background\",\r\n      onClick: this.onClick\r\n    }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TaskData[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
                     "name": "title",
                     "defaultValue": "signal('interview-task-2026-02-07')",
                     "deprecated": false,
@@ -36,7 +58,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 36,
                     "modifierKind": [
                         124,
                         148
@@ -51,23 +73,27 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "RouterOutlet"
+                    "name": "TaskComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NgOptimizedImage"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, signal } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [RouterOutlet],\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.css'\r\n})\r\nexport class App {\r\n  protected readonly title = signal('interview-task-2026-02-07');\r\n}\r\n",
+            "sourceCode": "import { Component, signal } from '@angular/core';\r\nimport {TaskComponent} from \"../components/task/task.component\";\r\nimport {NgOptimizedImage} from \"@angular/common\";\r\n\r\nexport type TaskData = {\r\n  id: string;\r\n  media: string;\r\n  mediaAlt: string;\r\n  head: string;\r\n  body: string;\r\n  callToAction: string;\r\n  href?: string;\r\n  onClick?: () => void;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [TaskComponent, NgOptimizedImage],\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.css'\r\n})\r\nexport class App {\r\n  onClick = () => { console.log('click'); };\r\n\r\n  tasks: TaskData[] = [\r\n    {\r\n      id: \"upload\",\r\n      body: \"Submit member and cashflow data to Hymans Robertson via our single secure data submission portal with real-time data validation.\",\r\n      head: \"Upload data\",\r\n      callToAction: \"Visit app\",\r\n      media: \"/Upload Data.png\",\r\n      mediaAlt: \"Upload data icon with pink background\",\r\n      onClick: this.onClick\r\n    }\r\n  ]\r\n  protected readonly title = signal('interview-task-2026-02-07');\r\n}\r\n",
             "styleUrl": "./app.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>Hello world</p>\r\n<router-outlet />\r\n"
+            "templateData": "@for (task of tasks; track task.id) {\r\n  @if (task.href) {\r\n    <a task>{{task.body}}</a>\r\n  } @else {\r\n    <button task [callToAction]=\"task.callToAction\" [head]=\"task.head\">\r\n      {{task.body}}\r\n      <img slot=\"media\" [ngSrc]=\"task.media\" [alt]=\"task.mediaAlt\" height=\"144\" width=\"128\">\r\n    </button>\r\n  }\r\n}\r\n"
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-665ef4b069bf768a2049920e13305664e0d94d5d798f49f8fdf8ca65c8ff8a7c49dfc4ca1fd373e52b7cbcc98aea51f066c21c1af53e97bf51afb085394f11b1",
+            "id": "component-TaskComponent-e567e48547a828cc2c22126a6a4d670010261f229b3c95392abcaf9de3cf60e3c1c026530fa1fc5ee73732c3ef24a19c7170eb26f524f82aa3f7edd66ead4624",
             "file": "src/components/task/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -134,13 +160,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, contentChild, HostBinding, input} from '@angular/core';\r\nimport { NgOptimizedImage } from \"@angular/common\";\r\n\r\n@Component({\r\n  selector: '[task]',\r\n  imports: [\r\n    NgOptimizedImage\r\n  ],\r\n  templateUrl: './task.component.html',\r\n  styleUrl: './task.component.css',\r\n})\r\nexport class TaskComponent {\r\n  head = input<string>();\r\n  callToAction = input<string>();\r\n  media = contentChild('media');\r\n}\r\n",
+            "sourceCode": "import {Component, contentChild, input} from '@angular/core';\r\nimport { NgOptimizedImage } from \"@angular/common\";\r\n\r\n@Component({\r\n  selector: '[task]',\r\n  imports: [\r\n    NgOptimizedImage\r\n  ],\r\n  templateUrl: './task.component.html',\r\n  styleUrl: './task.component.css',\r\n})\r\nexport class TaskComponent {\r\n  head = input<string>();\r\n  callToAction = input<string>();\r\n  media = contentChild('media');\r\n}\r\n",
             "styleUrl": "./task.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"task__media\">\r\n  <ng-content select=\"[slot=media]\"></ng-content>\r\n</div>\r\n<div class=\"task__content\">\r\n  <h2 class=\"task__head\">{{head()}}</h2>\r\n  <div class=\"task__body\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n  <p class=\"task__foot\">\r\n    {{callToAction()}}\r\n    <img ngSrc=\"/icons/chevron-right-solid-full.svg\" alt=\"chevron right\" [fill]=\"true\"/>\r\n  </p>\r\n</div>\r\n"
+            "templateData": "<div class=\"task__media\">\r\n  <ng-content select=\"[slot=media]\"></ng-content>\r\n</div>\r\n<div class=\"task__content\">\r\n  <h2 class=\"task__head\">{{head()}}</h2>\r\n  <div class=\"task__body\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n  <p class=\"task__foot\">\r\n    {{callToAction()}}\r\n    <img ngSrc=\"/icons/chevron-right-solid-full.svg\" alt=\"chevron right\" height=\"16\" width=\"16\"/>\r\n  </p>\r\n</div>\r\n"
         }
     ],
     "modules": [],
@@ -168,7 +194,19 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "TaskData",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type",
+                "file": "src/app/app.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 188
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/app.config.ts": [
@@ -198,7 +236,21 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/app.ts": [
+                {
+                    "name": "TaskData",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type",
+                    "file": "src/app/app.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 188
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -235,7 +287,17 @@
                 "linktype": "component",
                 "name": "App",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TaskData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

@@ -29,7 +29,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "@fontsource/roboto/300.css",
+              "@fontsource/roboto/400.css",
+              "@fontsource/roboto/500.css",
+              "@fontsource/roboto/700.css"
             ]
           },
           "configurations": {
@@ -98,7 +102,13 @@
               "-d",
               "."
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.css",
+              "@fontsource/roboto/300.css",
+              "@fontsource/roboto/400.css",
+              "@fontsource/roboto/500.css",
+              "@fontsource/roboto/700.css"
+            ],
             "outputDir": "storybook-static"
           }
         }
