@@ -14,6 +14,9 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --border-radius: 12px;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+  --shadow-heavy: rgba(0, 0, 0, 1);
 
   font-family: "Roboto", serif;
   font-optical-sizing: auto;
@@ -33,6 +36,9 @@
     --foreground: #ededed;
     --interactive: #86a8bf;
     --font-color-heading: #ffffff;
+    --shadow-light: rgba(255, 255, 255, 0.1);
+    --shadow-medium: rgba(255, 255, 255, 0.5);
+    --shadow-heavy: rgba(255, 255, 255, 1);
   }
 }
 

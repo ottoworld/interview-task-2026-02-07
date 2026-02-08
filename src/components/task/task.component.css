@@ -1,6 +1,8 @@
 :host {
   --task-icon-light-display: inline;
   --task-icon-dark-display: none;
+  --task-box-shadow: 1px 1px 15px var(--shadow-light);
+
   cursor: pointer;
   text-decoration: none;
   border: none;
@@ -8,18 +10,18 @@
   padding-inline: var(--size-xl);
   padding-block: var(--size-lg);
   background: var(--background);
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--task-box-shadow);
   border-radius: var(--border-radius);
   display: flex;
   gap: var(--size-md);
 }
 
 :host:hover {
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+  --task-box-shadow: 1px 1px 15px var(--shadow-medium);
 }
 
 :host:active {
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
+  --task-box-shadow: 1px 1px 15px var(--shadow-heavy);
 }
 
 .task-media__image {
